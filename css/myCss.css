@@ -1,0 +1,11 @@
+body{
+	background-color: #E5E5E5;
+}
+.forms{
+	width: 600px;
+	margin: 100px auto;
+}
+.form-control{
+	margin-bottom: 10px;
+	background-color: #F4F4F4;
+}
