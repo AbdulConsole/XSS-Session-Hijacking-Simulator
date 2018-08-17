@@ -21,7 +21,7 @@
 
 			//admin logged
 			$_SESSION['USERNAME'] = $username;
-			$_SESSION['ROLE'] = 'admin';
+			$_SESSION['ROLE'] = 'Admin';
 
 			header("location: welcome.php");
 
@@ -29,7 +29,7 @@
 		elseif ( $u_rows > 0 ) {
 			//user logged
 			$_SESSION['USERNAME'] = $username;
-			$_SESSION['ROLE'] = 'user';
+			$_SESSION['ROLE'] = 'Admin';
 
 			header("location: welcome.php");
 
