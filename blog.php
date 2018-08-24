@@ -2,8 +2,6 @@
 	session_start();
 	error_reporting(E_ERROR | E_PARSE);
 
-	date_default_timezone_get('UTC+2');
-
 	include 'connect.php';
 ?>
 
