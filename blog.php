@@ -88,7 +88,7 @@
 				$stmt = $con->prepare('INSERT INTO comments VALUES (?, ?, ?)');
 				if ( $stmt->execute(array(NULL, $_SESSION['USERNAME'], $comment)) ) {
 					showComments();	
-				}
+				}else echo "Sorry your comment cannot be posted !";
 			}
 		}
 	?>

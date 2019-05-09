@@ -41,7 +41,7 @@
 			This page contains a code that will accept a GET parameter and stores it in the 'logs.txt' file <br> in the attacker server (the same server in this case).	
 		</li>
 		<li>
-			The code above will send <code>document.cookie</code> as a GET parameter which is the user' cookies, <br> so when a user has an active session and his cookie stealed, then his session had been hijacked.
+			The code above will send <code>document.cookie</code> as a GET parameter which is the user' cookies, <br> so he can now impersonate the user using his session id cookie.
 		</li>
  	</ul>	
 
