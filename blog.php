@@ -79,16 +79,18 @@
 	<hr>
 
 	<?php 
-		if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-			showComments();
-		}
-		else{
-			if (isset($_SESSION['USERNAME'])){
-				$comment = $_POST['thecomment'];
-				$stmt = $con->prepare('INSERT INTO comments VALUES (?, ?, ?)');
-				if ( $stmt->execute(array(NULL, $_SESSION['USERNAME'], $comment)) ) {
-					showComments();	
-				}
+		if ($_SERVER['REQUEST_METHOD'] !== 'POST') showComments();
+
+		if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['USERNAME'])){
+			$comment = $_POST['thecomment'];
+			$stmt = $con->prepare('INSERT INTO comments VALUES (?, ?, ?)');
+			try {
+				$stmt->execute(array(NULL, $_SESSION['USERNAME'], $comment));
+				showComments();
+				echo "EXECUTED CATCH";
+			}
+			catch(Exception $e){ 
+				print $e->getMessage();
 			}
 		}
 	?>
